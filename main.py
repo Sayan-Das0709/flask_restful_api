@@ -15,6 +15,21 @@ class Sum(Resource):
     return jsonify({'data': a+b}) 
 api.add_resource(status,'/')
 api.add_resource(Sum,'/add/<int:a>,<int:b>')
+class Diff(Resource):
+ def get(self, a, b):
+    return jsonify({'data': a-b}) 
+api.add_resource(status,'/')
+api.add_resource(Diff,'/diff/<int:a>,<int:b>')
+class Mult(Resource):
+ def get(self, a, b):
+    return jsonify({'data': a*b}) 
+api.add_resource(status,'/')
+api.add_resource(Mult,'/mult/<int:a>,<int:b>')
+class Div(Resource):
+ def get(self, a, b):
+    return jsonify({'data': a/b}) 
+api.add_resource(status,'/')
+api.add_resource(Div,'/div/<float:a>,<float:b>')
 if __name__ == '__main__':
  app.run()
 
